@@ -17,8 +17,9 @@ export default defineConfig({
       entry: 'src/main.ts',
       userscript: {
         icon: 'https://vitejs.dev/logo.svg',
+        license: 'MIT',
         author: 'Ryan',
-        namespace: 'npm/vite-plugin-monkey',
+        namespace: 'SublimeCT',
         description: '自动签到脚本, 需要配合自动化脚本(MacOS: Script Editor / Windows: bat)使用, 开机启动(MacOS: 启动项管理 / Windows: Task Scheduler)',
         // match: ['https://juejin.cn/user/center/signin?__auto_signin=1&from=pornhub'],
         include: Object.values(PagesInfoMap).map(info => info.pattern),
