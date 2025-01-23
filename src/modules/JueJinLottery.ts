@@ -1,7 +1,7 @@
 import { ApplicationModule } from "../Application";
 import { Pages } from "../Pages";
 import { checkRoute } from "../utils/route";
-import { waitForElement } from "../utils/wait";
+import { delay, waitForElement } from "../utils/wait";
 
 export class JueJinLotteryModule implements ApplicationModule {
   page = Pages.juejin;
@@ -24,7 +24,8 @@ export class JueJinLotteryModule implements ApplicationModule {
     // 1. 获取抽奖按钮
     const signinButton = await waitForElement<HTMLButtonElement>('#turntable-item-0')
     if (!signinButton || !signinButton.textContent) throw new Error('抽奖按钮未找到')
-      console.log(signinButton)
+      console.log(signinButton, signinButton.textContent.trim())
+    await delay(1000) // 延迟 1s 执行, 因为默认是 单抽 200 💎
     if (signinButton.textContent.trim().indexOf('免费抽奖次数') === -1) return console.log('今日已抽奖')
     // 2. 点击抽奖按钮
     signinButton.click()

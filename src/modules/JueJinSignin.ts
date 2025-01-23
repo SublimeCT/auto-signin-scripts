@@ -1,7 +1,7 @@
 import { ApplicationModule } from "../Application";
 import { Pages } from "../Pages";
 import { checkRoute } from "../utils/route";
-import { delay, waitForElement } from "../utils/wait";
+import { waitForElement } from "../utils/wait";
 
 export class JueJinSigninModule implements ApplicationModule {
   page = Pages.juejin;
@@ -19,9 +19,6 @@ export class JueJinSigninModule implements ApplicationModule {
     // this.initialized = false
   }
   private async _checkSignin() {
-    console.log(Date.now())
-    await delay(1000)
-    console.log(Date.now())
     // 1. 获取签到按钮
     const signinButton = await waitForElement<HTMLButtonElement>('button.signin.btn')
     if (!signinButton || !signinButton.textContent || signinButton.textContent.trim() !== '立即签到') throw new Error('签到按钮未找到或已经签到')
