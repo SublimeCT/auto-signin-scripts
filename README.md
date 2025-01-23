@@ -62,5 +62,7 @@ start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" https://juejin.
       3. 完成设置并保存任务。
 
 ## CHANGELOGS
+- `0.1.1`: `2025-01-23 08:39:07`
+	- fix(JuejinLotteryModule): 在抽奖前加入延迟机制
 - `0.1.0`: `2025-01-22 09:46:35`
   - feat: 增加掘金签到和抽奖模块
